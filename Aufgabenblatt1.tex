@@ -1,0 +1,102 @@
+\documentclass[paper=a4, fontsize=11pt, twoside]{scrartcl}
+\usepackage{geometry} \geometry{a4paper,  bottom=33mm}
+
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+
+\usepackage[osf,sc]{mathpazo}
+\usepackage{courier}
+\renewcommand{\sfdefault}{uop} % ---> URW Classico Optima Clone
+\renewcommand{\rmdefault}{pplj} % ---> Mathpazo Palatino
+\linespread{1.05}
+
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{booktabs} 
+\usepackage{url} 
+
+\usepackage{siunitx}
+\sisetup{locale = DE}
+
+\usepackage{titlesec} 
+\usepackage{graphicx}
+\usepackage{hyperref} 
+\usepackage{changepage}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{minted}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy} %eigener Seitenstil
+\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+\fancyhead[OL]{Programmieren in C++ (Tutorium)} %Kopfzeile links
+\fancyhead[OC]{} %zentrierte Kopfzeile
+\fancyhead[OR]{Simon Fromme, Florian Rinke} %Kopfzeile rechts
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+\fancyfoot[C]{\thepage} %Seitennummer
+
+% DRAFT mode
+% \usepackage{draftwatermark}
+
+\setlength\parindent{0pt} 
+
+\title{Programmieraufgaben 1}
+
+\author{Simon Fromme}
+\date{\normalsize\today}
+
+\begin{document}
+\vspace*{0.75\baselineskip}
+\begin{center}
+  \Large 1. Aufgabenblatt \\\vspace{0.5em} \large Programmieren in C++ (Tutorium)
+\end{center}
+
+\section*{Grundlagen}
+\begin{enumerate}
+\item Schreiben Sie ein Programm, das den Text \texttt{"Hello World!"} auf dem Bildschirm ausgibt.
+\item Modifizieren Sie ihr Programm so, dass der Text \texttt{"Hello World!"} zunächst in einer Variable gespeichert wird. Deren Inhalt soll anschließend ausgegeben werden.
+\item Modifizieren Sie ihr Programm erneut, so dass der Text \texttt{"Hello World!"} mithilfe der Präprozessor Direktive \mintinline{c++}{#define} dem Symbol \texttt{HELLO} als Konstante zugewiesen und diese anschließend ausgegeben wird.
+\end{enumerate}
+
+\section*{Einfache Datentypen und Operatoren}
+\begin{enumerate}[resume]
+ \item Schreiben Sie ein Programm, das das Volumen einer Party-Pizza (Kai's Pizza, Radius: $\SI{50}{\cm}$, Höhe: $\SI{1,2}{\cm}$) berechnet und auf dem Bildschirm ausgibt. Dazu soll der Wert \texttt{PI = 3.14159265} mittels \mintinline{c++}{#define} als Konstante definiert und Radius, sowie Höhe der Pizza zunächst als Variablen \mintinline{c++}{z} bzw. \mintinline{c++}{a} gespeichert werden.
+
+ \item Stellen Sie die Zahlen $a=(155)_{10}$\footnote{Die Darstellung $(\dots)_{10}$ wird verwendet, um eine Zahl als Dezimalzahl (Basis 10) zu kennzeichnen, wenn nicht offensichtlich ist, welches Zahlensystem gerade verwendet wird.}  und $b=(57)_{10}$ (per Hand, ohne Computer) im Binärsystem dar. Überlegen Sie sich zunächst auf dem Papier das Ergebnis der C++-Operationen \mintinline{c++}{a<<3}, \mintinline{c++}{b>>1}, \mintinline{c++}{a^b}, \mintinline{c++}{a&b}, \mintinline{c++}{a|b} und \mintinline{c++}{~b}.
+Schreiben Sie anschließend ein Programm, das Ihre Vorhersagen überprüft.
+
+ \item In C++, können Zahlen im Hexadezimalsystem durch die Schreibweise \mintinline{c++}{0xHEX} dargestellt werden, wobei \mintinline{c++}{HEX} die Darstellung der Zahl im Hexadezimalsystem ist.\\ 
+Schreiben Sie ein Programm, das die Anzahl der Sekunden/Minuten/Stunden in einem Jahr berechnet und jeweils auf dem Bildschirm ausgibt. Verwenden Sie in Ihrem Programm nur Zahlen in Hexadezimal-Darstellung (Sie müssen ggf. zunächst einige Umrechnungen per Hand vornehmen).
+
+ \item Abhängig vom Datentyp einer Variablen können Operatoren unterschiedliche Eigenschaften haben. Ein Beispiel ist der \texttt{"/"}-Operator, der bei ganzen Zahlen anders, als bei Gleitkomma-Zahlen wirkt. \\ Schreiben Sie ein Programm, das den Wert von \mintinline{c++}{a/2} bzw. \mintinline{c++}{b/2} ausgibt, wobei $a$ einen ganzzahligen Datentyp (z.B. \mintinline{c++}{int}) und $b$ einen Gleitkomma-Datentyp (z.B. \mintinline{c++}{double}) hat, ansonsten aber $a=b$ ist. Worin besteht der Unterschied? Welche Wirkung hat der Operator \mintinline{c++}{%} jeweils?  
+
+ \item Verwenden Sie die Bibliothek \texttt{cmath}, die Sie mit \mintinline{c++}{#include <cmath>}\footnote{Einige Beispiele zu Befehlen der \texttt{cmath}-Bibliothek finden Sie auf Seite 62 der Datei \texttt{Programmieren1-2.pdf}} einbinden können, um folgende Funktionen einer von Ihnen gewählten Gleitkommazahl $x$ zu berechnen: $\sin(x)+\cos(x)$, $e^x$ und $\log(|x|) + \sqrt{|x|}$.   \\
+\textsc{Zusatzaufgabe}: Wie kann man $x^7$ berechnen, wenn man dazu nur die Logarithmus und Exponential-Funktion der \textrm{cmath}-Bibliothek zur Verfügung hat?
+
+\item Mithilfe der Zeichencodierung ASCII (American Standard Code for Information Interchange) werden Zeichen als Folge von 7 BIT  (z.B. A = 1000001) codiert\footnote{Auf dem Vorlesungsfolien finden Sie auf Seite 68 eine ASCII-Codierungstabelle.}. Gleichzeitig können diese Bitfolgen natürlich auch als (Ganz-)Zahlen interpretiert werden. \\ Schreiben Sie ein Programm, das die Zeichen Ihres Vornamens jeweils in eine Zahl umrechnet und deren Summe anschließend auf dem Bildschirm ausgibt. (Hinweis: Auf Seite 70 der Vorlesungsfolien haben Sie für die Umwandlung die Funktion \mintinline{c++}{static_cast} kennengelernt.)
+\end{enumerate}
+
+\vspace{1.5cm}
+\textbf{ergänzende Hinweise:}
+\par
+Auch wenn es -solange die Syntax stimmt- für den C++-Compiler egal ist, ob ein Programm schön geschrieben ist (was heißt das überhaupt?!), haben sich in der Praxis einige Richtlinien (s.g. Styleguides) für die Gestaltung eines Programms etabliert. Diese sollte man beachten, um es anderen Menschen zu erleichtern, den eigenen Programmcode zu lesen. Dazu gehört u.a.
+\begin{itemize}
+
+ \item nur ein Programmstatement pro Zeile \\
+(Negativbeispiel: \mintinline{c++}{int a = 5; a += 5; cout << a << endl;}) 
+
+\item Der Programmcode sollte stets entsprechend der Schachtelungstiefe des Programms eingerückt werden. Eclipse erledigt das automatisch, wenn man zu Beginn einer Code-Zeile die TAB-Taste drückt. 
+  \begin{minted}{c++}
+  // gut                         // schlecht
+  int main()                     int main()
+  {                              {
+     cout << 1 + 2 << endl;      cout << 1 + 2 << endl;
+     return 0;                   return 0;
+  }                              }
+  \end{minted}
+
+ \item Leerzeichen um s.g. binäre (zweistellige) Operatoren (\mintinline{c++}{a + b} anstatt \mintinline{c++}{a+b})
+
+ \item keine Leerzeichen um s.g unäre (einstellige) Operatoren (\mintinline{c++}{~x} statt \mintinline{c++}{~ x})
+\end{itemize}
+
+\end{document}
