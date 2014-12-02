@@ -99,16 +99,14 @@
 \end{multicols}
 \section*{Kontrollstrukturen}
 \begin{enumerate}[resume]
+\setcounter{enumi}{2}
   \item Schreiben Sie ein Programm, das die Gültigkeit einer Eingabe überprüft. Über die Tastatur wird eine Zahl eingelesen. Wenn diese zwischen 10 und 100 liegt, soll das Programm \glqq \texttt{richtig}\grqq\, ausgeben, ansonsten \glqq \texttt{falsch}\grqq.%ob 10 und 100 inclusive sind, lasse ich hier bewusst offen ;-) Mal schauen ob jemand fragt
   \item Für ein Kassensystem sollen Rabatte berechnet werden. Schreiben Sie ein Programm, das einen Einzelpreis und eine Stückzahl von der Tastatur einliest. Bei mehr als 10 Stück, wird ein Rabatt von 5\%, über 50 Stück ein Rabatt von 10\% gewährt. Ihr Programm soll anschließend den Gesamtpreis ausgeben.
-  \item Der Ternäre Operator \mintinline{c++}{ ? :}
-   \begin{enumerate}
-    \item Lesen Sie zwei Zahlen von der Tastatur ein und weisen Sie die größere der beiden der Variablen \mintinline{c++}{max} zu.
-    \item Lesen Sie eine Zahl von der Tastatur ein und berechnen Sie deren Betrag. Speichern Sie den Betrag in der Variablen Lesen Sie zwei Zahlen von der Tastatur ein und weisen Sie die größere der beiden der Variablen \mintinline{c++}{abs}.
-   \end{enumerate}
-   Sind diese Aufgaben leichter mit if-Strukturen oder dem Ternären Operator zu lösen? Wo liegt das Problem beim Ternären Operator?
+  \item Lesen Sie eine Zahl von der Tastatur ein und berechnen Sie deren Betrag. Speichern Sie den Betrag in der Variablen \mintinline{c++}{abs}.
+  \item Schreibe Sie ein Programm, das nach Eingabe von zwei Zahlen \(a\) und \(b\), deren Maximum \(\max(a,b)\) ausgibt. Nutzen Sie dabei zunächst eine reguläre \texttt{if}/\texttt{then}/\texttt{else}-Anweisung und modifizieren Sie Ihr Programm anschließend so, dass Sie stattdessen den Bedingungsoperator\footnote{Sie haben den Bedingungsoperator \mintinline{c++}{?} auf Seite 13 der Vorlesungsfolien (\texttt{Programmieren 3-5.pdf}) kennengelernt.} \mintinline{c++}{?} verwenden. \\
+   Sind die Aufgaben 3/4 leichter mit if-Strukturen oder dem Bedingungsoperator zu lösen? Welche Vor- bzw. Nachteile hat der Bedingungsoperator?
+  \item Schreiben Sie ein Programm, das nach Eingabe einer Zahl 1-7 den dazugehörigen Wochentag (Montag-Sonntag) ausgibt. Falls keine gültige Zahl eingegeben wurde, soll das Programm den Text ``\texttt{Kein gültiger Wochentag!}'' ausgeben. Um kompatibel zu US-Gepflogenheiten sein, soll auch die 0 als Sonntag interpretiert werden, erweitern Sie Ihr Prgramm entsprechend.
   \item Noch eine Eingabeüberprüfung: Lassen Sie Ihr Programm ausgeben \glqq \texttt{Antworten Sie mit Ja (j/J) oder Nein (n/N)}\grqq , und werten Sie die Antwort aus. Je nach Eingabe soll Ihr Programm ausgeben: \glqq \texttt{\justify Sie haben mit JA geantwortet}\grqq, \glqq \texttt{Sie haben mit NEIN geantwortet}\grqq, oder \glqq \texttt{\justify Ihre Eingabe war ungültig}\grqq. Schlagen Sie eine sinnvolle Erweiterung der Überprüfung vor.
-  \item Schreiben Sie ein Programm, das eine Note als Zahl einliest und ihre Beschreibung ausgibt (1=Sehr Gut, 2=Gut, 3=Befriedigend, 4=Ausreichend, 5=Nicht bestanden), eine ungültige Eingabe soll zu einer Fehlermeldung führen. Setzen Sie diese Aufgabe einmal mit if- und einmal mit switch/case-Anweisungen um.
   \item Ein einfacher Taschenrechner soll nacheinander eine Zahl, die Rechenoperation (\texttt{+-*/\%}) und eine zweite Zahl einlesen, danach das Ergebnis ausgeben. Erstellen Sie dieses Programm unter Verwendung einer switch/case-Struktur. Was ist der Vorteil gegenüber if-Abfragen?
   
 \end{enumerate}
@@ -116,10 +114,10 @@
 % Aufgaben zu Schleifen (while, do-while, for, break-Anweisung, continue-Anweisung
 \section*{Schleifen}
 \begin{enumerate}[resume]
-  \item Berechnen Sie mit Hilfe einer for-Schleife die Kreisumfänge für die folgenden Radien: $\SI{20}{\mm}$, $\SI{21}{\mm}$, $\SI{22}{\mm}$, \dots, $\SI{40}{\mm}$. Geben Sie die Ergebnisse geeignet aus.
+  \item Berechnen Sie mit Hilfe einer for-Schleife die Kreisumfänge für die folgenden Radien: $\SI{20}{\mm}$, $\SI{21}{\mm}$, $\SI{22}{\mm}$, \dots, $\SI{40}{\mm}$. Geben Sie die Ergebnisse aus.
   \item Jeder Datentyp besitzt eine bestimmte Länge im Speicherbereich und damit einen festen Zahlenbereich. Wird dieser Zahlenbereich überschritten, spricht man von einem Überlauf. Schreiben Sie ein Programm, das mit Hilfe einer while-Schleife in jedem Schleifendurchlauf eine ganze Zahl des Datentyps short mit einem Anfangswert von 0 um das Inkrement 1 erhöht. Die Schleife soll solange ausgeführt werden, bis ein Überlauf entstanden ist. Finden Sie so heraus, welchen Zahlenbereich eine \mintinline{c++}{short}-Variable annehmen kann.
-  \item Berechnen Sie mit Hilfe einer Schleife die Fakultät einer eingegebenen Zahl. Lösen Sie das Problem mit einer while- und einer for-Schleife. Welcher Schleifentyp scheint für das Problem passender zu sein?
-  \item Allgemein gefragt: wann verwendet man eine for-Schleife, wann eine while-Schleife und wann eine do...while-Schleife?
+  \item Berechnen Sie mit Hilfe einer Schleife die Fakultät einer eingegebenen Zahl. Lösen Sie das Problem mit einer while- und einer for-Schleife. Welcher Schleifentyp scheint für das Problem passender zu sein?\\
+  Allgemein gefragt: wann verwendet man eine for-Schleife, wann eine while-Schleife und wann eine do...while-Schleife?
  \item Im Jahr 1582 wurde von  Papst Gregor XIII. der Gregorianische Kalender und damit die bis heute geltende Schaltjahresreglung eingeführt. Diese lautet wie folgt:
    \begin{itemize}
    \item Jahre, deren Jahreszahlen durch 4 teilbar sind, sind Schaltjahre (z.B. 1992), 
