@@ -4,7 +4,7 @@ using namespace std;
 int main()
 {
   int i;
-  cout << "Bitte Zahl von 1-7 eingeben: ";
+  cout << "Bitte Zahl von 0-7 eingeben: ";
   cin >> i;
 
   string result;
