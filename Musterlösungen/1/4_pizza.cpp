@@ -9,7 +9,7 @@ int main()
   float a = 1.2;
   float volume = PI * z * z * a;
 
-  std::cout << "Die Pizza hat ein Volumen von " << volume << " cm3" << '\n';
+  cout << "Die Pizza hat ein Volumen von " << volume << " cm3" << '\n';
   
   return 0;
 }

@@ -30,8 +30,7 @@
      * a ^ b  =    10100010 (=  162)
      * a & b  =       11001 (=   25) 
      * 1 | b  =      111011 (=   59)
-     *    ~b  =    11000110 (= -(0111010) = -58) --> Zweierkomplement
-
+     *    ~b  =    11000110 (= -(0111010) = -58) --> siehe Zweierkomplement
  **/
 
 #include <iostream>
@@ -42,7 +41,6 @@ int main()
   int a = 155;
   int b = 57;
   
-
   cout << "Die Ergebnisse der gesuchten Operationen lauten:" << endl;
   cout << "a << 3 == " << (a << 3) << endl;
   cout << "b >> 1 == " << (b >> 1) << endl;

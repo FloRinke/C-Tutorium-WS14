@@ -5,6 +5,7 @@ using namespace std;
 
 int main()
 {
+  // beliebige Zahl
   float x = 2.491726;
   
   cout << "sin(x) + cos(x)            == " << sin(x) + cos(x) << endl;
