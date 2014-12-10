@@ -75,19 +75,37 @@
   \item Ausgabe der Summe aller Elemente des Vectors
   \end{itemize}
 
-   \item Schreiben Sie ein Programm, das den Mittelwert, den Median\footnote{Der Median einer Auflistung von Zahlenwerten ist der Wert, welcher an der mittleren Stelle steht, wenn man die Werte der Größe nach sortiert. Ist die Anzahl der Zahlenwerte gerade, gibt es also zwei mittlere Werte, so ist der Median der Mittelwert dieser beiden Werte.}, das Minimum und das Maximum einer Menge von Zahlen ausgibt. Lassen Sie dafür zunächst 10 float-Werte durch den Benutzer eingeben, die Sie in einem \mintinline{c++}{vector} Container speichern. Eine Erweiterung Ihres Programms auf eine beliebige Anzahl von Zahlen $n$ soll durch die Änderung einer einzelnen Variablen möglich sein. \\
+\item Schreiben Sie ein Programm, das den Mittelwert, den Median\footnote{Der Median einer Auflistung von Zahlenwerten ist der Wert, welcher an der mittleren Stelle steht, wenn man die Werte der Größe nach sortiert. Ist die Anzahl der Zahlenwerte gerade, gibt es also zwei mittlere Werte, so ist der Median der Mittelwert dieser beiden Werte.}, das Minimum und das Maximum einer Menge von Zahlen ausgibt. Lassen Sie dafür zunächst 10 float-Werte durch den Benutzer eingeben, die Sie in einem \mintinline{c++}{vector} Container speichern. Eine Erweiterung Ihres Programms auf eine beliebige Anzahl von Zahlen $n$ soll durch die Änderung einer einzelnen Variablen möglich sein. \\
 Hinweis: Auf der Seite 31f in den Vorlesungsfolien (\texttt{Programmieren 3-6.pdf}) haben Sie Möglichkeiten kennengelernt, eine Liste von Zahlen zu sortieren.
 \end{enumerate}
 
 % Aufgaben zu String
 \section*{String}
 \begin{enumerate}[resume]
-   \item
+  \item Einfache Verschlüsselung: Um einen Text schnell unleserlich zu machen, kann das ROT13-Verfahren\footnote{http://de.wikipedia.org/wiki/ROT13} verwendet werden, bei dem jeder Buchstabe eines Textes um 13 Stellen im Alphabet verschoben wird. Schreiben Sie ein Programm, dass für einen eingegebenen Text diese Umcodierung vornimmt. Testen Sie die Ergebnisse Ihres fertigen Programms. (Was ist der Klartext zu \glqq Haraqyvpure Hajnuefpurvayvpuxrvgfnagevro\grqq?) 
+  \ item Umwandlung in Groß-/Kleinbuchstaben: Lesen Sie einen Text ein und wandeln Sie ihn je einmal in Groß- und Kleinbuchstaben um. Geben Sie beide Texte aus. Lösen Sie die Aufgabe einmal von Hand mit char-Arithmethik und unter Verwendung von Funktionen der Standardbibliothek\footnote{hier ist z.B. die Bibliothek \glqq locale\grqq\, (http://www.cplusplus.com/reference/locale/) einen Blick Wert}.
+  \item Palindrome sind Wörter oder Sätze, die von vorne und hinten gelesen dasselbe ergeben (z.B. Anna, Lagerregal, Ein Neger mit Gazelle zagt im Regen nie). Schreiben Sie ein Programm, dass für einen eingegebenen Text prüft, ob es sich dabei um ein Palindrom handelt. Satz- und Leerzeichen sollen dabei ignoriert werden.
+\end{enumerate}
+
+\section*{Struct}
+\begin{enumerate}[resume]
+   \item Telefonbuch: Erstellen Sie eine \mintinline{c++}{struct}-Datenstruktur, die für ein firmeninternes Telefonbuch die Daten \glqq Name\grqq, \glqq Vorname\grqq, \glqq Telefonnummer\grqq, \glqq Abteilung\grqq und \glqq Raum\grqq sinnvoll speichern kann.
+   \item Speichern Sie folgende Datensätze als Struct in einem Vektor und geben Sie sie sinnvoll formatiert aus (Natürlich beliebig erweiterbar für unsere Testzwecke)
+   \begin{tabular}{llclr}
+   Name & Vorname & Telefon & Abteilung & Raum \\    \hline 
+   Vimes & Samuel & 2110 & Wache & W05 \\
+   Ridcully & Mustrum  & 3305 & Forschung & T45 \\
+   Vetinari & Havelock & 1001 & Geschäftsführung & P100 \\
+   von Lipwig & Moist  & 1919 & Poststelle & W07 \\
+   Nobbs & Cecil & 2114 & Wache & W08
+   \end{tabular}
+   
 \end{enumerate}
 
 \section*{Enum}
 \begin{enumerate}[resume]
-   \item
+   \item Erweiterung des Telefonbuchs: Da die Abteilungen sich in unserem Beispiel bekannt sind und sich nicht ändern, können sie vereinfacht gespeichert werden um Platz zu sparen und einfachere Auswertungen zu ermöglichen. Erstellen Sie hierzu einen \mintinline{c++}{enum}, der die verwendeten Abteilungen als mögliche Werte hat. Ändern Sie nun den Telefonbuch-\mintinline{c++}{struct} entsprechend, dass dieser enum verwendet wird um Dateien zu speichern.
+   \item Erweitern Sie Ihre Ausgabe so, dass bei Personen aus der Geschäftsführung \glqq Wichtig!!\grqq\, und bei Personen aus der Wache \glqq Gefährlich!!\grqq am Ende der jeweiligen Zeile ausgegeben wird (Verwenden Sie hierzu eine \mintinline{c++}{switch}/\mintinline{c++}{case}-Struktur).
 \end{enumerate}
 
 
