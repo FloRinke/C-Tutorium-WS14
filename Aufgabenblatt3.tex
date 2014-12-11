@@ -82,15 +82,19 @@ Hinweis: Auf der Seite 31f in den Vorlesungsfolien (\texttt{Programmieren 3-6.pd
 % Aufgaben zu String
 \section*{String}
 \begin{enumerate}[resume]
-  \item Einfache Verschlüsselung: Um einen Text schnell unleserlich zu machen, kann das ROT13-Verfahren\footnote{http://de.wikipedia.org/wiki/ROT13} verwendet werden, bei dem jeder Buchstabe eines Textes um 13 Stellen im Alphabet verschoben wird. Schreiben Sie ein Programm, dass für einen eingegebenen Text diese Umcodierung vornimmt. Testen Sie die Ergebnisse Ihres fertigen Programms. (Was ist der Klartext zu \glqq Haraqyvpure Hajnuefpurvayvpuxrvgfnagevro\grqq?) 
-  \ item Umwandlung in Groß-/Kleinbuchstaben: Lesen Sie einen Text ein und wandeln Sie ihn je einmal in Groß- und Kleinbuchstaben um. Geben Sie beide Texte aus. Lösen Sie die Aufgabe einmal von Hand mit char-Arithmethik und unter Verwendung von Funktionen der Standardbibliothek\footnote{hier ist z.B. die Bibliothek \glqq locale\grqq\, (http://www.cplusplus.com/reference/locale/) einen Blick Wert}.
-  \item Palindrome sind Wörter oder Sätze, die von vorne und hinten gelesen dasselbe ergeben (z.B. Anna, Lagerregal, Ein Neger mit Gazelle zagt im Regen nie). Schreiben Sie ein Programm, dass für einen eingegebenen Text prüft, ob es sich dabei um ein Palindrom handelt. Satz- und Leerzeichen sollen dabei ignoriert werden.
+  \item Implementierung einer einfachen Verschlüsselung: Um einen Text schnell unleserlich zu machen, kann das ROT13-Verfahren\footnote{\url{http://de.wikipedia.org/wiki/ROT13}} verwendet werden, bei dem jeder Buchstabe eines Textes um 13 Stellen im Alphabet (Zahlen, Umlaute und Sonderzeichen werden außen vor gelassen) verschoben wird. \par
+Schreiben Sie ein Programm, das für einen eingegebenen Text diese Umcodierung vornimmt. Testen Sieanschließend die Funktionsweise Ihres Programms, indem Sie folgenden Text entschlüsseln:  \glqq \texttt{\justify Haraqyvpure Hajnuefpurvayvpuxrvgfnagevro}\grqq. 
+  \item Umwandlung in Groß-/Kleinbuchstaben: Lesen Sie einen Text ein und wandeln Sie ihn je einmal in Groß- und Kleinbuchstaben um. Geben Sie beide Texte aus. \par Lösen Sie die Aufgabe einmal von Hand mit char-Arithmethik und unter Verwendung von Funktionen der Standardbibliothek\footnote{hier ist z.B. die Bibliothek \glqq \texttt{locale}\grqq\, (\url{http://www.cplusplus.com/reference/locale/}) einen Blick Wert.}.
+  \item Palindrome sind Wörter oder Sätze, die von vorne und hinten gelesen dasselbe ergeben (z.B. Anna, Lagerregal, Ein Neger mit Gazelle zagt im Regen nie). 
+\par Schreiben Sie ein Programm, das für einen eingegebenen Text prüft, ob es sich dabei um ein Palindrom handelt. Satz- und Leerzeichen sollen dabei ignoriert werden.
 \end{enumerate}
 
 \section*{Struct}
 \begin{enumerate}[resume]
-   \item Telefonbuch: Erstellen Sie eine \mintinline{c++}{struct}-Datenstruktur, die für ein firmeninternes Telefonbuch die Daten \glqq Name\grqq, \glqq Vorname\grqq, \glqq Telefonnummer\grqq, \glqq Abteilung\grqq und \glqq Raum\grqq sinnvoll speichern kann.
-   \item Speichern Sie folgende Datensätze als Struct in einem Vektor und geben Sie sie sinnvoll formatiert aus (Natürlich beliebig erweiterbar für unsere Testzwecke)
+   \item Telefonbuch: Erstellen Sie eine \mintinline{c++}{struct}-Datenstruktur, die für ein firmeninternes Telefonbuch die Daten \glqq Name\grqq, \glqq Vorname\grqq, \glqq Telefonnummer\grqq, \glqq Abteilung\grqq und \glqq Raum\grqq sinnvoll speichern kann. Überlegen Sie sich jeweils sinnvolle Datentypen.
+   \item Speichern Sie folgende Datensätze als Struct (siehe vorherige Aufgabe) in einem Vektor und geben Sie sie sinnvoll formatiert aus.
+\begin{table}[h!]
+   \centering
    \begin{tabular}{llclr}
    Name & Vorname & Telefon & Abteilung & Raum \\    \hline 
    Vimes & Samuel & 2110 & Wache & W05 \\
@@ -99,13 +103,13 @@ Hinweis: Auf der Seite 31f in den Vorlesungsfolien (\texttt{Programmieren 3-6.pd
    von Lipwig & Moist  & 1919 & Poststelle & W07 \\
    Nobbs & Cecil & 2114 & Wache & W08
    \end{tabular}
-   
+\end{table}
 \end{enumerate}
 
 \section*{Enum}
 \begin{enumerate}[resume]
-   \item Erweiterung des Telefonbuchs: Da die Abteilungen sich in unserem Beispiel bekannt sind und sich nicht ändern, können sie vereinfacht gespeichert werden um Platz zu sparen und einfachere Auswertungen zu ermöglichen. Erstellen Sie hierzu einen \mintinline{c++}{enum}, der die verwendeten Abteilungen als mögliche Werte hat. Ändern Sie nun den Telefonbuch-\mintinline{c++}{struct} entsprechend, dass dieser enum verwendet wird um Dateien zu speichern.
-   \item Erweitern Sie Ihre Ausgabe so, dass bei Personen aus der Geschäftsführung \glqq Wichtig!!\grqq\, und bei Personen aus der Wache \glqq Gefährlich!!\grqq am Ende der jeweiligen Zeile ausgegeben wird (Verwenden Sie hierzu eine \mintinline{c++}{switch}/\mintinline{c++}{case}-Struktur).
+   \item Erweiterung des Telefonbuchs (siehe vorherige Aufgabenstellung): Da die Abteilungen sich in unserem Beispiel bekannt sind und sich nicht ändern, können sie vereinfacht gespeichert werden, um Platz zu sparen und einfachere Auswertungen zu ermöglichen. \par Erstellen Sie hierzu eine \mintinline{c++}{enum}-Datenstruktur, die die verwendeten Abteilungen als mögliche Werte beinhaltet. Ändern Sie nun den \mintinline{c++}{struct}-Datentyp des Telefonbuchs, so dass dieser den \mintinline{c++}{enum}-Datentyp verwendet, um Abteilungen zu speichern.
+   \item Erweitern Sie Ihre Ausgabe so, dass bei Personen aus der Geschäftsführung \glqq \texttt{Wichtig!!}\grqq\, und bei Personen aus der Wache \glqq \texttt{Gefährlich!!}\grqq am Ende der jeweiligen Zeile ausgegeben wird (Verwenden Sie hierzu eine \mintinline{c++}{switch}/\mintinline{c++}{case}-Datenstruktur).
 \end{enumerate}
 
 
