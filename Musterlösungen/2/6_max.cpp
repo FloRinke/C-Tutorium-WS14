@@ -17,10 +17,10 @@ int main()
   else
     max = b; 
 
+  // alternative Variante mit ternärem Bedingungsoperator
+  //  a > b ? max = a : max = b;
+
   cout << "Das Maximum von a und b ist: " << max << endl;
   
-  // alternative Variante mit ternärem Bedingungsoperator
-  // a > b ? max = a : max = b
-
   return 0;
 }

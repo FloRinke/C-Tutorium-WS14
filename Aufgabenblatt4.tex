@@ -1,0 +1,94 @@
+\documentclass[paper=a4, fontsize=11pt, twoside]{scrartcl}
+\usepackage{geometry} \geometry{a4paper,  bottom=33mm}
+
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+
+\usepackage[osf,sc]{mathpazo}
+\usepackage{courier}
+\renewcommand{\sfdefault}{uop} % ---> URW Classico Optima Clone
+\renewcommand{\rmdefault}{pplj} % ---> Mathpazo Palatino
+\linespread{1.05}
+
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{booktabs} 
+\usepackage{url} 
+
+\usepackage{siunitx}
+\sisetup{locale = DE}
+
+\usepackage{titlesec} 
+\usepackage{graphicx}
+\usepackage{hyperref} 
+\usepackage{changepage}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{minted}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{xspace}
+\expandafter\def\expandafter\grqq\expandafter{\grqq\xspace}
+
+% break \texttt{}
+\newcommand*\justify{%
+  \fontdimen2\font=0.4em% interword space
+  \fontdimen3\font=0.2em% interword stretch
+  \fontdimen4\font=0.1em% interword shrink
+  \fontdimen7\font=0.1em% extra space
+  \hyphenchar\font=`\-% allowing hyphenation
+}
+
+\pagestyle{fancy} %eigener Seitenstil
+\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+\fancyhead[OL]{Programmieren in C++ (Tutorium)} %Kopfzeile links
+\fancyhead[OC]{} %zentrierte Kopfzeile
+\fancyhead[OR]{Simon Fromme, Florian Rinke, Lars Franke} %Kopfzeile rechts
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+\fancyfoot[C]{\thepage} %Seitennummer
+
+% DRAFT mode
+% \usepackage{draftwatermark}
+
+\setlength\parindent{0pt} 
+
+\title{Programmieraufgaben 3}
+
+\author{Simon Fromme}
+\date{\normalsize\today}
+
+\begin{document}
+\vspace*{0.75\baselineskip}
+\begin{center}
+  \Large 4. Aufgabenblatt \\\vspace{0.5em} \large Programmieren in C++ (Tutorium)
+\end{center}
+
+% Aufgaben zu Vector (sequence containers representing arrays that can change in size)
+\section*{Eingabe \& Ausgabe}
+\begin{enumerate}
+\item Das bekannte Weihnachtslied ``Rudolph, the Red-Nosed Reindeer'' (ursprünglich eine Auftragsproduktion einer amerikanischen Kaufhauskette) ist in diesem Jahr 65 Jahre alt geworden. Der Autor des Lieder überlegte damals, den Protagonisten des Liedes evtl. auch Reginald (zu britisch) oder Rollo (zu heiter) zu nennen. \par
+Lesen Sie den Satz ``\texttt{\justify Rudolph the red-nosed reindeer had a very shiny nose.}'' von der Tastatur ein. Lesen Sie anschließend ein einzelnes Zeichen von der Tastatur ein und ersetzen\footnote{Sie können dafür die Funktion \mintinline{c++}{replace(pos,length,other_string)} aus der Bibliothek \mintinline{c++}{string} verwenden. Z.B ersetzt \mintinline{c++}{str.replace(9,5,"n example");} den String \mintinline{c++}{str = "this is a test string."} durch den String \mintinline{c++}{"this is an example string."}.  } Sie das Wort \texttt{Rudolph} in diesem Satz, je nach dem, welches Zeichen eingegeben wurde durch:
+\begin{table}[h!]
+   \centering
+   \begin{tabular}{cc}
+    Zeichen & Name \\
+\hline
+    a & \texttt{Rudolph} \\
+    b & \texttt{Reginald} \\
+    c & \texttt{Rollo} \\
+   \end{tabular}
+\end{table}
+
+und geben Sie den veränderten Satz aus. Wenn ein anderes Zeichen eingegeben wurde soll \texttt{"Keine gültige Eingabe ausgegeben!"} ausgegeben werden. 
+\end{enumerate}
+
+% Aufgaben zu String
+\section*{Funktionen}
+\begin{enumerate}[resume]
+\item Schreiben Sie ein Programm, welches die Fakultät $n!$ einer vorgegbenen Zahl $n$ berechnet. Definieren Sie dazu eine Funktion \mintinline{c++}{int fak(n)}.
+  \item Schreiben Sie ein Programm, welches die Summe aller Quadratzahlen $\sum\limits_{i=1}^{n}i^2$ bis zu einer vorgegbenen Zahl $n$ berechnet. Definieren Sie dazu eine Funktion \mintinline{c++}{int sumquad(n)}.
+  \item Schreiben Sie eine Funktion \mintinline{c++}{int division(a,b)}, die den Quotienten $a/b$ zweier Zahlen berechnet. Wenn die Division nicht möglich ist, soll die Zahl \texttt{0} zurück gegeben werden.
+\end{enumerate}
+
+
+
+\end{document}
