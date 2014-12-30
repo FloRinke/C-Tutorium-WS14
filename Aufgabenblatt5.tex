@@ -1,0 +1,114 @@
+\documentclass[paper=a4, fontsize=11pt, twoside]{scrartcl}
+\usepackage{geometry} \geometry{a4paper,  bottom=33mm}
+
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+
+\usepackage[osf,sc]{mathpazo}
+\usepackage{courier}
+\renewcommand{\sfdefault}{uop} % ---> URW Classico Optima Clone
+\renewcommand{\rmdefault}{pplj} % ---> Mathpazo Palatino
+\linespread{1.05}
+
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{booktabs} 
+\usepackage{url} 
+
+\usepackage{siunitx}
+\sisetup{locale = DE}
+
+\usepackage{titlesec} 
+\usepackage{graphicx}
+\usepackage{hyperref} 
+\usepackage{changepage}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{minted}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{xspace}
+\expandafter\def\expandafter\grqq\expandafter{\grqq\xspace}
+
+% break \texttt{}
+\newcommand*\justify{%
+  \fontdimen2\font=0.4em% interword space
+  \fontdimen3\font=0.2em% interword stretch
+  \fontdimen4\font=0.1em% interword shrink
+  \fontdimen7\font=0.1em% extra space
+  \hyphenchar\font=`\-% allowing hyphenation
+}
+
+\pagestyle{fancy} %eigener Seitenstil
+\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+\fancyhead[OL]{Programmieren in C++ (Tutorium)} %Kopfzeile links
+\fancyhead[OC]{} %zentrierte Kopfzeile
+\fancyhead[OR]{Simon Fromme, Florian Rinke, Lars Franke} %Kopfzeile rechts
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+\fancyfoot[C]{\thepage} %Seitennummer
+
+% DRAFT mode
+% \usepackage{draftwatermark}
+
+\setlength\parindent{0pt} 
+
+\title{Programmieraufgaben 3}
+
+\author{Simon Fromme}
+\date{\normalsize\today}
+
+\begin{document}
+\vspace*{0.75\baselineskip}
+\begin{center}
+  \Large 5. Aufgabenblatt \\\vspace{0.5em} \large Programmieren in C++ (Tutorium)
+\end{center}
+
+% Aufgaben zu Vector (sequence containers representing arrays that can change in size)
+%     - Modularisierung
+%     - Überladen
+%     - Prototypen
+%     - inline Functions
+%     - Übergabe per Referenz
+
+\section*{Eingabe \& Ausgabe}
+\begin{enumerate}
+\item foo
+% TODO: Aufgabe zur Ein- und Ausgabe erstellen
+\end{enumerate}
+
+\section*{Funktionen}\label{sec:funktionen}
+In dieser Aufgabe müssen einige Funktionen geschrieben werden. Verwenden Sie für die folgenden Abschnitte eine einzelne Programmdatei und testen sie die jeweiligen Funktionen, indem Sie diese von der \mintinline{c++}{main}-Methode aus aufrufen.
+\begin{enumerate}[resume]
+\item Schreiben Sie ein Programm, das die Fakultät $n!$ einer vorgegbenen Zahl $n$ berechnet. Definieren Sie dazu eine Funktion \mintinline{c++}{int fak(n)}. 
+  \item Schreiben Sie ein Programm, welches die Summe aller Quadratzahlen $\sum\limits_{i=1}^{n}i^2$ bis zu einer vorgegbenen Zahl $n$ berechnet. Definieren Sie dazu eine Funktion \\ \mintinline{c++}{int sumquad(n)}.
+  \item Schreiben Sie eine Funktion \mintinline{c++}{division(a,b)}, die den Quotienten $a/b$ zweier \mintinline{c++}{float}-Zahlen berechnet. Wenn die Division nicht möglich ist, soll die Zahl \texttt{0} zurück gegeben werden.\label{item:division}
+\end{enumerate}
+
+\section*{Überladen von Funktionen}\label{sec:uberl-von-funktionen}
+\begin{enumerate}[resume]
+\item Die Funktion \mintinline{c++}{division(a,b)} soll nun bei ganzzahligen Parametern (Datentyp: \mintinline{c++}{int}) das Ergebnis der ganzzahligen Division zurückgeben\footnote{Für zwei ganze Zahlen $a$ und $b$ ist das Ergebnis der ganzzahligen Division $(a/b)_{\mathrm{int}}$ definiert als $(a/b)_{\mathrm{int}}:= \max\{z \in \mathbb{R}:z\le a/b \}$, wobei $a/b$ die ``normale'' Division ist.}. Überladen Sie dafür die in Aufgabe \ref{item:division} geschriebene Funktion so, dass für ganzzahlige Parameter der gewünschte Wert ausgegeben wird. 
+\end{enumerate}
+
+\section*{Modularisierung}\label{sec:modularisierung}
+\begin{enumerate}[resume]
+\item Um eine bessere Übersichtlichkeit des Programmcodes zu gewährleisten, trennt man häufig die Deklaration (s.g. Prototyp) von der Implementation einer Funktion. \par
+Modifizieren Sie ihre bisher erstellten Funktionen so, dass die jeweilige Funktion vor der \mintinline{c++}{main}-Methode deklariert, allerdings erst am Ende der Datei implementiert werden.
+\end{enumerate}
+
+\section*{Übergabe nach Name/Referenz}
+\begin{enumerate}[resume]
+\item Machen Sie sich den Unterschied zwischen dem Übergeben eines Parameters durch seinen Namen bzw. durch seine Referenz (vorangestelltes \textrm{&}-Symbol klar. \par
+  Schreiben Sie dazu zunächste eine Funktion \mintinline{c++}{int inc(n)}, die den Wert $n+1$ zurückgibt, ohne dabei den Parameter im aufrufenden Kontext zu verändern. \\
+  Wie muss die Fuktion mpdifiziert werden, damit der Parameter im aufrufenden Kontext durch die Funktion verändert wird? 
+\end{enumerate}
+
+\end{document}
+
+
+% TODO: Aufgabe zu Ein- und Ausgabe erarbeiten (ähnlich vom Weihnachtsübungsblatt)
+
+% neue Konzepte seit dem letzten Aufgabenblatt:
+% - Modularisierung (done)
+% - Überladen (done)
+% - Prototypen (done)
+% - inline Functions (TODO: Nachlesen in der Referenz)
+% - Übergabe per Referenz (done)
