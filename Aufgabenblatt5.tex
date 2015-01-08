@@ -22,6 +22,7 @@
 \usepackage{hyperref} 
 \usepackage{changepage}
 \usepackage{caption}
+
 \usepackage{enumitem}
 \usepackage{minted}
 \usepackage{fancyhdr}
@@ -85,7 +86,7 @@ In dieser Aufgabe müssen einige Funktionen geschrieben werden. Verwenden Sie f�
 
 \section*{Überladen von Funktionen}\label{sec:uberl-von-funktionen}
 \begin{enumerate}[resume]
-\item Die Funktion \mintinline{c++}{division(a,b)} soll nun bei ganzzahligen Parametern (Datentyp: \mintinline{c++}{int}) das Ergebnis der ganzzahligen Division zurückgeben\footnote{Für zwei ganze Zahlen $a$ und $b$ ist das Ergebnis der ganzzahligen Division $(a/b)_{\mathrm{int}}$ definiert als $(a/b)_{\mathrm{int}}:= \max\{z \in \mathbb{R}:z\le a/b \}$, wobei $a/b$ die ``normale'' Division ist.}. Überladen Sie dafür die in Aufgabe \ref{item:division} geschriebene Funktion so, dass für ganzzahlige Parameter der gewünschte Wert ausgegeben wird. 
+\item Die Funktion \mintinline{c++}{division(a,b)} soll nun bei ganzzahligen Parametern (Datentyp: \mintinline{c++}{int}) das Ergebnis der ganzzahligen Division zurückgeben\footnote{Für zwei ganze Zahlen $a$ und $b$ ist das Ergebnis der ganzzahligen Division $(a/b)_{\mathrm{int}}$ definiert als $(a/b)_{\mathrm{int}}:= \max\{z \in \mathbb{Z}:z\le a/b \}$, wobei $a/b$ die ``normale'' Division ist.}. Überladen Sie dafür die in Aufgabe \ref{item:division} geschriebene Funktion so, dass für ganzzahlige Parameter der gewünschte Wert ausgegeben wird. 
 \end{enumerate}
 
 \section*{Modularisierung}\label{sec:modularisierung}
@@ -96,9 +97,9 @@ Modifizieren Sie ihre bisher erstellten Funktionen so, dass die jeweilige Funkti
 
 \section*{Übergabe nach Name/Referenz}
 \begin{enumerate}[resume]
-\item Machen Sie sich den Unterschied zwischen dem Übergeben eines Parameters durch seinen Namen bzw. durch seine Referenz (vorangestelltes \textrm{\&}-Symbol) klar. \par
+\item Machen Sie sich den Unterschied zwischen dem Übergeben eines Parameters an eine Fuktion durch seinen Namen bzw. durch seine Referenz (vorangestelltes \textrm{\&}-Symbol) klar. \par
   Schreiben Sie dazu zunächst eine Funktion \mintinline{c++}{int inc(n)}, die den Wert $n+1$ zurück gibt, ohne dabei den Parameter im aufrufenden Kontext zu verändern. \\
-  Wie muss die Fuktion modifiziert werden, damit der Parameter im aufrufenden Kontext durch die Funktion verändert wird? 
+  Wie muss die Fuktion modifiziert werden, damit der Parameter im aufrufenden Kontext durch Aufruf der Funktion \mintinline{c++}{inc} verändert wird? 
 \end{enumerate}
 
 \end{document}
