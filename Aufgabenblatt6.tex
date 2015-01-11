@@ -1,0 +1,100 @@
+\documentclass[paper=a4, fontsize=11pt, twoside]{scrartcl}
+\usepackage{geometry} \geometry{a4paper,  bottom=33mm}
+
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+
+\usepackage[osf,sc]{mathpazo}
+\usepackage{courier}
+\renewcommand{\sfdefault}{uop} % ---> URW Classico Optima Clone
+\renewcommand{\rmdefault}{pplj} % ---> Mathpazo Palatino
+\linespread{1.05}
+
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{booktabs}
+\usepackage{url}
+
+\usepackage{siunitx}
+\sisetup{locale = DE}
+
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{changepage}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{minted}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{xspace}
+\expandafter\def\expandafter\grqq\expandafter{\grqq\xspace}
+
+% break \texttt{}
+\newcommand*\justify{%
+  \fontdimen2\font=0.4em% interword space
+  \fontdimen3\font=0.2em% interword stretch
+  \fontdimen4\font=0.1em% interword shrink
+  \fontdimen7\font=0.1em% extra space
+  \hyphenchar\font=`\-% allowing hyphenation
+}
+
+\pagestyle{fancy} %eigener Seitenstil
+\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+\fancyhead[OL]{Programmieren in C++ (Tutorium)} %Kopfzeile links
+\fancyhead[OC]{} %zentrierte Kopfzeile
+\fancyhead[OR]{Simon Fromme, Florian Rinke, Lars Franke} %Kopfzeile rechts
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+\fancyfoot[C]{\thepage} %Seitennummer
+
+% DRAFT mode
+% \usepackage{draftwatermark}
+
+\setlength\parindent{0pt}
+
+\title{Programmieraufgaben 6}
+
+\author{Simon Fromme}
+\date{\normalsize\today}
+
+\begin{document}
+\vspace*{0.75\baselineskip}
+\begin{center}
+  \Large 6. Aufgabenblatt \\\vspace{0.5em} \large Programmieren in C++ (Tutorium)
+\end{center}
+
+\section*{Pointer}
+\begin{enumerate}
+  \item ToDo: Adresse und Inhalt von Elementen
+  \item ToDo: const Pointer
+  \item RFC: Pointer-Arithmethik?
+\end{enumerate}
+
+\section*{Arrays}
+\begin{enumerate}
+  \item ToDo: Initialisierung und Zugriff
+  \item ToDo: Adressierung per [] und *
+  \item ToDo: Arrays als Parameter für Funktionen
+\end{enumerate}
+
+
+\section*{C-Strings}
+\begin{enumerate}
+  \item ToDo: Initialisierung und Elementweiser Zugriff
+  \item ToDo: Kopieren
+  \item RFC: Sicherheitsprobleme durch Längenverletzung?
+\end{enumerate}
+
+\end{document}
+
+% neue Konzepte seit dem letzten Aufgabenblatt:
+% - Pointer
+%   * Adresse und Inhalt
+%   * const pointer und pointer auf const
+% - Arrays
+%   * Adressierung als Array und per Pointer
+%   * Intialisierung (Liste, Anzahl)
+% - C-Strings
+%   * Intialisierung
+%   * Elementweiser Zugriff
+%   * Kopieren
+
