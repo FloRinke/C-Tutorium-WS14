@@ -65,16 +65,31 @@
 \section*{Pointer}
 \begin{enumerate}
   %Adresse und Inhalt von Elementen
-  \item Legen Sie je eine Variable vom Typ \mintinline{c++}{int, char, float, string} an und lassen einen Pointer darauf zeigen. Welche Ausgabe erhalten Sie, wenn Sie die Pointer-Variable mit bzw. ohne den Stern ausgeben lassen?
+  \item Legen Sie je eine Variable vom Typ \mintinline{c++}{int, char, float, string} an und weisen Sie diesen jeweils einen beliebigen Wert aus dem jeweils zulässigen Wertebereich zu. Lassen Sie nun jeweils einen Pointer auf die eben deklarierten Variablen zeigen. Welche Ausgabe erhalten Sie, wenn Sie die Pointer-Variable mit bzw. ohne den Stern (Dereferenzierungsoperator) ausgeben lassen?
   \item 
-  %ToDo: const Pointer
-  \item 
+    Betrachten Sie folgende Situation, in der insgesamt drei Pointer deklariert wurden.
+    \begin{minted}{c++}
+      char c = 'A';
+
+      const char * c_p1 = &c;
+      char * const c_p2 = &c;
+      const char * const c_p3 = &c;
+    \end{minted}
+  Versuchen Sie nun für jeden der Pointer \mintinline{c++}{c_p1, c_p2, c_p3} sowohl die Speicheradresse des Pointers, als auch den Wert, auf den der jeweilige Pointer zeigt, zu verändern. Was schließen Sie daraus hinsichtlich der Bedeutung des Schlüsselwortes \mintinline{c++}{const} in jedem der drei Fälle?
   %RFC: Pointer-Arithmethik?
-  \item 
+  \item Pointer können nicht nur mit dem \mintinline{c++}{*}-Operator dereferenziert werden, sondern es sind auch weitere Operationen zulässig.
+  Deklarieren Sie je einen Pointer auf eine \mintinline{c++}{bool}- und eine \mintinline{c++}{short}-Variable und führen Sie nacheinander jeweils folgende Operationen aus:
+  \begin{itemize}
+    \item Inkrementieren des Pointers,
+    \item Addition von 5 auf den Pointer,
+    \item Dekrementieren des Pointers,
+    \item Substraktion von 4 auf den Pointer.   
+  \end{itemize}
+Lassen Sie ihr Programm den anfänglichen Wert und den Wert des Pointers nach jeder dieser Operationen ausgeben. Welchen Unteschied beobachten Sie hinsichtlich der verschiedenen Datentypen? Versuchen Sie vor einer Operation den Namen der resultierenden Speicheradresse vorherzusagen. 
 \end{enumerate}
 
 \section*{Arrays}
-\begin{enumerate}
+\begin{enumerate}[resume]
   %Initialisierung und Zugriff
   \item Legen Sie ein Array \mintinline{c++}{int data[5];} an und lassen Sie sich den Inhalt der Elemente ausgeben. Testen und Vergleichen Sie die Ausgabe im Debug- und Release-Modus. Vergleichen Sie Ihre Ergebnisse mit denen Ihrer Kommilitonen. Was stellen Sie fest?
   \item Zur Erfassung von 1000 Messwerten (Fließkommazahlen) wird ein Datenspeicher benötigt. Legen Sie ein geeignetes Array an und stellen Sie sicher, dass es jedes Element den Wert 0 enthält. Wie können Sie dies am einfachsten erreichen?
