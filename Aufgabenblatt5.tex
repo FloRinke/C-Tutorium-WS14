@@ -52,7 +52,7 @@
 
 \setlength\parindent{0pt} 
 
-\title{Programmieraufgaben 3}
+\title{Programmieraufgaben 5}
 
 \author{Simon Fromme}
 \date{\normalsize\today}
@@ -69,10 +69,10 @@
 %     - Prototypen
 %     - inline Functions
 %     - Übergabe per Referenz
-
 \section*{Eingabe \& Ausgabe}
 \begin{enumerate}
-\item foo
+\item Schreiben Sie ein Programm, das eine Zeile von der Konsole einlesen kann und diese in einer Variablen vom Typ \mintinline{c++}{string} speichert. Für die Eingabe ,,\texttt{Frohe Weihnachten!}'' soll ,,\texttt{Frohes neues Jahr!}'' ausgegeben werden. Dabei soll nur der hintere Teil der Zeichenkette ersetzt werden.\footnote{Sie können dafür die Funktion \mintinline{c++}{replace(pos,length,other_string)} aus der Bibliothek \mintinline{c++}{string} verwenden. Z.B ersetzt \mintinline{c++}{str.replace(9,5,"n example");} den String \mintinline{c++}{str = "this is a test string."} durch den String \mintinline{c++}{"this is an example string."}.  }
+		\item Versuchen sie die Eingabe ,,\mintinline{c++}{Frohes neues Jahr} mit \mintinline{c++}{cin} einzulesen und lassen sie sich die gespeicherte Zeichenkette direkt wieder ausgeben. Was fällt ihnen auf? Führen sie mehrere \mintinline{c++}{cin}-Eingaben hintereinander durch, speichern sie diese in verschiedenen Variablen, die jeweils nacheinander ausgegeben werden. Wie erklären sie sich das beobachtete Verhalten?
 % TODO: Aufgabe zur Ein- und Ausgabe erstellen
 \end{enumerate}
 
@@ -99,7 +99,9 @@ Modifizieren Sie ihre bisher erstellten Funktionen so, dass die jeweilige Funkti
 \begin{enumerate}[resume]
 \item Machen Sie sich den Unterschied zwischen dem Übergeben eines Parameters an eine Fuktion durch seinen Namen bzw. durch seine Referenz (vorangestelltes \textrm{\&}-Symbol) klar. \par
   Schreiben Sie dazu zunächst eine Funktion \mintinline{c++}{int inc(n)}, die den Wert $n+1$ zurück gibt, ohne dabei den Parameter im aufrufenden Kontext zu verändern. \\
-  Wie muss die Fuktion modifiziert werden, damit der Parameter im aufrufenden Kontext durch Aufruf der Funktion \mintinline{c++}{inc} verändert wird? 
+  Wie muss die Fuktion modifiziert werden, damit der Parameter im aufrufenden Kontext durch die Funktion verändert wird? 
+  \item Schreiben sie eine Funktion die zwei Elemente eines \mintinline{c++}{vector<int>}-Objektes vertauscht. 
+	  Dies kann durch eine Übergabe der Elemente nach Referenz geschehen oder indem der gesamte Vector kopiert und nach der Vertauschung zurückgegeben wird. Programmieren sie beide Varianten und überlegen sie jeweils die Vor- und Nachteile.
 \end{enumerate}
 
 \end{document}

@@ -9,7 +9,7 @@ int main()
   // Nach C++11 standard:
   // (das Gleichheitszeichen kann nach diesem standard auch weggelassen werden)
   vector<int> v = {11, 12, 2014, 314, 42};
-  // Fuer Comiler die diesen Standard nicht unterstuetzen:
+  // Fuer (ältere) Compiler, die diesen Standard nicht unterstuetzen:
   // Ein Array wird initialisiert, dessen Anfangs- und Endadresse uebergeben werden.
   int A[] = {11, 12, 2014, 314, 42};
   vector<int> v2(&A[0], &A[0]+5);
