@@ -96,7 +96,7 @@ Lassen Sie ihr Programm den anfänglichen Wert und den Wert des Pointers nach je
   %Adressierung per [] und *
   \item Legen Sie ein \mintinline{c++}{int[]}-Feld mit einigen Werten an. Geben Sie den Inhalt des Feldes zwei Mal aus, wobei Sie auf verschiedene Arten auf die Elemente zugreifen: Als Array mit dem Indizierungs-Operator \mintinline{c++}{[]} und als Pointer mit dem Dereferenzierungsoperator \mintinline{c++}{*}
   %Arrays als Parameter für Funktionen
-  \item Legen Sie ein \mintinline{c++}{int[]}-Feld mit einigen Werten an. Geben Sie den Inhalt und die Größe des Feldes \footnote{hierbei hilft der \mintinline{c++}{sizeof}-Operator} aus. Anschließend übergeben Sie das Array an eine Funktion \mintinline{c++}{checkArray(int[] data)} und lassen diese das gleiche machen. Welches Problem stellen Sie fest? Wie müssen die die Funktionsdeklaration erweitern um dieses Problem zu lösen?
+  \item Legen Sie ein \mintinline{c++}{int[]}-Feld mit einigen Werten an. Geben Sie den Inhalt und die Größe des Feldes \footnote{hierbei hilft der \mintinline{c++}{sizeof}-Operator} aus. Anschließend übergeben Sie das Array an eine Funktion \\\mintinline{c++}{checkArray(int[] data)} und lassen diese das gleiche machen. Welches Problem stellen Sie fest? Wie müssen die die Funktionsdeklaration erweitern um dieses Problem zu lösen?
 \end{enumerate}
 
 
@@ -104,8 +104,17 @@ Lassen Sie ihr Programm den anfänglichen Wert und den Wert des Pointers nach je
 \begin{enumerate}[resume]
   %ToDo: Initialisierung und Elementweiser Zugriff
   \item Auf Übungsblatt 3 (Aufgabe 5) wurde geprüft, ob ein Text ein Palindrom ist (also von vorne und hinten gelesen identisch ist). \\
-Schreiben Sie erneut ein Programm, das für ein eingegebenes Wort überprüft, ob es sich um ein Palindrom handelt. Verwenden Sie diesmal statt strings aber \mintinline{c++}{char[]} zum Speichern der Zeichenkette. Um den Testablauf zu beschleunigen, kann ein geeigneter Text (z.B. \glqq Lagerregal\grqq) im Programmcode abgelegt werden, anstatt ihn jedesmal von der Tastatus einzulesen. (Zusatzaufgabe: Erweitern Sie Ihr Programm, so dass auch ganze Sätze überprüft werden können. Leerzeichen sollen dabei ignoriert werden, \glqq Ein Neger mit Gazelle zagt im Regen nie\grqq\, ist beispielsweise ein gültiges Palindrom.)
-  %ToDo: Kopieren
+Schreiben Sie erneut ein Programm, das für ein eingegebenes Wort überprüft, ob es sich um ein Palindrom handelt. Verwenden Sie diesmal statt strings aber \mintinline{c++}{char[]} zum Speichern der Zeichenkette. Um den Testablauf zu beschleunigen, kann ein geeigneter Text (z.B. \glqq Lagerregal\grqq) im Programmcode abgelegt werden, anstatt ihn jedesmal von der Tastatus einzulesen. 
+  \item Um Texte zu vergleichen, wird in der Programmierung üblicherweise ein lexikalischer Vergleich angewendet. Implementieren Sie eine Funktion \\\mintinline{c++}{int compare(const char* a, const char* b}, die einen derartigen Vergleich durchführt. Das heißt, sie soll folgende Werte zurückgeben:
+    \begin{description}
+      \item[0] Beide Parameter sind exakt gleich (z.B. \mintinline{c++}{compare("abc", "abc")})
+      \item[-1] Der erste ungleiche Buchstabe in \mintinline{c++}{a} hat einen niedrigeren Wert als in \mintinline{c++}{b} (z.B. \mintinline{c++}{compare("aad", "abc")})
+      \item[1] Der erste ungleiche Buchstabe in \mintinline{c++}{a} hat einen höheren Wert als in \mintinline{c++}{b} (z.B. \mintinline{c++}{compare("acb", "abc")})
+    \end{description}
+  %kopieren
+  \item Um Texte case-insensitive (also ohne Berücksichtigung der Groß-/Kleinschreibung) zu vergleichen, ist es zweckmäßig alle Texte intern in Kleinschreibung umzuwandeln. Erstellen Sie eine Funktion \mintinline{c++}{void strToUpper(const char* src, char* dest)}, die einen Text \mintinline{c++}{src} in Kleinschreibung\footnote{Zur Umwandlung einzelner Zeichen können Sie die Ascii-Werte verwenden, oder z.B. die Funktion \mintinline{c++}{char tolower (char c)} aus der locale-Bibliothek nutzen} nach \mintinline{c++}{dest} kopiert.\\
+  Zusatzfrage: warum ist es nicht möglich, die Kopie in der Funktion zu erstellen und per return zurückzugeben?
+
   %RFC: Sicherheitsprobleme durch Längenverletzung?
 \end{enumerate}
 
