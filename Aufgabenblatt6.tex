@@ -112,7 +112,8 @@ Schreiben Sie erneut ein Programm, das für ein eingegebenes Wort überprüft, o
       \item[1] Der erste ungleiche Buchstabe in \mintinline{c++}{a} hat einen höheren Wert als in \mintinline{c++}{b} (z.B. \mintinline{c++}{compare("acb", "abc")})
     \end{description}
   %kopieren
-  \item Um Texte case-insensitive (also ohne Berücksichtigung der Groß-/Kleinschreibung) zu vergleichen, ist es zweckmäßig alle Texte intern in Kleinschreibung umzuwandeln. Erstellen Sie eine Funktion \mintinline{c++}{void strToUpper(const char* src, char* dest)}, die einen Übergebenen Text \mintinline{c++}{src} komplett in Kleinbuchstaben umgewandelt\footnote{Zur Umwandlung einzelner Zeichen können Sie die Ascii-Werte verwenden, oder z.B. die Funktion \mintinline{c++}{char tolower (char c)} aus der locale-Bibliothek nutzen} nach \mintinline{c++}{dest} kopiert.
+  \item Um Texte case-insensitive (also ohne Berücksichtigung der Groß-/Kleinschreibung) zu vergleichen, ist es zweckmäßig alle Texte intern in Kleinschreibung umzuwandeln. Erstellen Sie eine Funktion \mintinline{c++}{void strToUpper(const char* src, char* dest)}, die einen Text \mintinline{c++}{src} in Kleinschreibung\footnote{Zur Umwandlung einzelner Zeichen können Sie die Ascii-Werte verwenden, oder z.B. die Funktion \mintinline{c++}{char tolower (char c)} aus der locale-Bibliothek nutzen} nach \mintinline{c++}{dest} kopiert.\\
+  Zusatzfrage: warum ist es nicht möglich, die Kopie in der Funktion zu erstellen und per return zurückzugeben?
 
   %RFC: Sicherheitsprobleme durch Längenverletzung?
 \end{enumerate}
