@@ -10,7 +10,7 @@ int main()
   while(*copy2++);
   copy2 -= 2; // copy2 zeigt jetzt auf das letzte Zeichen, copy1 auf das Erste.
 
-  bool isPalindrom = 1; 
+  bool isPalindrom = true; 
 
   
   while(isPalindrom) {
