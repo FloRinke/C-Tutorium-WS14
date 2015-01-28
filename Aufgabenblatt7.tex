@@ -1,0 +1,105 @@
+\documentclass[paper=a4, fontsize=11pt, twoside]{scrartcl}
+\usepackage{geometry} \geometry{a4paper,  bottom=33mm}
+
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+
+\usepackage[osf,sc]{mathpazo}
+\usepackage{courier}
+\renewcommand{\sfdefault}{uop} % ---> URW Classico Optima Clone
+\renewcommand{\rmdefault}{pplj} % ---> Mathpazo Palatino
+\linespread{1.05}
+
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{booktabs}
+\usepackage{url}
+
+\usepackage{siunitx}
+\sisetup{locale = DE}
+
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{changepage}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{minted}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{xspace}
+\expandafter\def\expandafter\grqq\expandafter{\grqq\xspace}
+
+% break \texttt{}
+\newcommand*\justify{%
+  \fontdimen2\font=0.4em% interword space
+  \fontdimen3\font=0.2em% interword stretch
+  \fontdimen4\font=0.1em% interword shrink
+  \fontdimen7\font=0.1em% extra space
+  \hyphenchar\font=`\-% allowing hyphenation
+}
+
+\pagestyle{fancy} %eigener Seitenstil
+\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+\fancyhead[OL]{Programmieren in C++ (Tutorium)} %Kopfzeile links
+\fancyhead[OC]{} %zentrierte Kopfzeile
+\fancyhead[OR]{Simon Fromme, Florian Rinke, Lars Franke} %Kopfzeile rechts
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+\fancyfoot[C]{\thepage} %Seitennummer
+
+% DRAFT mode
+% \usepackage{draftwatermark}
+
+\setlength\parindent{0pt}
+
+\title{Programmieraufgaben 7}
+
+\author{Simon Fromme}
+\date{\normalsize\today}
+
+\begin{document}
+\vspace*{0.75\baselineskip}
+\begin{center}
+  \Large 7. Aufgabenblatt \\\vspace{0.5em} \large Programmieren in C++ (Tutorium)
+\end{center}
+\section*{Wiederholung: Schleifen}
+\begin{enumerate}
+	\item Schreiben Sie ein Programm das für einen Geldbetrag in Cent eine Kombination von Münzen ausrechent mit der dieser ausgegben werden kann, wenn 1,2,5,10,20,100 und 137 Cent Münzen zur verfügung stehen. Halten Sie dabei die Anzehl der Münzen so klein wie möglich. 
+\end{enumerate}
+
+
+\section*{Wiederholung: Funktionen}
+\begin{enumerate}
+  \item Die Folge der Fibonacci-Zahlen ist definiert durch 
+	  \[
+		  f_0=0 \qquad f_1=1 \qquad f_n=f_{n-1} + f_{n-2} \text{ für alle } n\geq 2
+	  \]
+	  Schreiben Sie eine C++-Funktion, die für ein gegebens $n$ die $f_n$ rekursiv, d.h. durch Aufruf der Funktion in der Funktion, berechnet.
+  \item Definieren Sie in einem Programm ein \mintinline{c++}{rechteck} als \mintinline{c++}{struct} mit einer Länge und einer Breite.
+	  Schreiben Sie außerdem eine Funktion die ein \mintinline{c++}{rechteck} als Argument nimmt und die Fläche des Rechtecks zurückgiebt. 
+	  Definieren sie dannach ein \mintinline{c++}{struct kreis} und überladen sie die \mintinline{c++}{float flaeche(rechteck)} Funktion mit einer \mintinline{c++}{float flaeche(kreis)} Funktion, die die Kreisfläche berechnet.
+\end{enumerate}
+
+\section*{Wiederholung: Pointer}
+\begin{enumerate}
+  \item Überlegen Sie sich zum folgenden Code was die Ausgabe sein wird ohne ihn direkt auszuführen. 
+	  \begin{minted}{c++}
+#include <iostream>
+using namespace std;
+int main()
+{
+	char str[] = "Programmieren ist doof!";
+	char *p = str;
+	while (*++p != 'd');
+	--*p;
+	*++++++p = (*(str+7));
+	--*p;
+	cout << str << endl;
+	return 0;
+}
+	  \end{minted}
+\end{enumerate}
+
+\end{document}
+
+% neue Konzepte seit dem letzten Aufgabenblatt:
+
